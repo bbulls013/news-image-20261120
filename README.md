@@ -6,9 +6,9 @@ masthead, a red accent, the day's lead story (Trump, Xi and Putin in
 first three-way talks in China), a cyclone warning for Odisha, and a
 row of smaller headlines — all in one deterministic 1024×1024 PNG.
 
-![status](https://make.fun/badge/news-image-20261120.svg)
-![rank](https://make.fun/badge/news-image-20261120/bbulls013/news-image-20261120/rank.svg)
-![reward](https://make.fun/badge/news-image-20261120/bbulls013/news-image-20261120/reward.svg)
+[![make.fun · news-image-20261120](https://make.fun/badge/news-image-20261120.svg)](https://make.fun/bounty/news-image-20261120?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120)
+[![rank](https://make.fun/badge/news-image-20261120/bbulls013/news-image-20261120/rank.svg)](https://make.fun/bounty/news-image-20261120/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120)
+[![reward](https://make.fun/badge/news-image-20261120/bbulls013/news-image-20261120/reward.svg)](https://make.fun/bounty/news-image-20261120?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120)
 
 Competition: https://make.fun/bounty/news-image-20261120
 
