@@ -176,22 +176,22 @@ def draw_spiral(cv, cx, cy, max_r, color):
 def draw_flags(cv, y):
     # Three flag-like rectangles: striped banner, solid disc banner,
     # and a cross banner. Kept abstract on purpose.
-    fw, fh = 170, 104
+    fw, fh = 170, 128
     gap = 46
     total = fw * 3 + gap * 2
     x0 = (W - total) // 2
     # Flag 1: horizontal stripes, red top stripe.
     x = x0
     cv.frame(x, y, fw, fh, INK, t=3)
-    cv.rect(x + 3, y + 3, fw - 6, 24, RED)
-    cv.rect(x + 3, y + 27, fw - 6, 24, CREAM)
-    cv.rect(x + 3, y + 51, fw - 6, 24, INK)
-    cv.rect(x + 3, y + 75, fw - 6, fh - 78, CREAM)
+    cv.rect(x + 3, y + 3, fw - 6, 30, RED)
+    cv.rect(x + 3, y + 33, fw - 6, 30, CREAM)
+    cv.rect(x + 3, y + 63, fw - 6, 30, INK)
+    cv.rect(x + 3, y + 93, fw - 6, fh - 96, CREAM)
     # Flag 2: red field with cream disc.
     x = x0 + fw + gap
     cv.frame(x, y, fw, fh, INK, t=3)
     cv.rect(x + 3, y + 3, fw - 6, fh - 6, RED)
-    cv.circle(x + fw // 2, y + fh // 2, 30, CREAM, filled=True)
+    cv.circle(x + fw // 2, y + fh // 2, 36, CREAM, filled=True)
     # Flag 3: cream field, red cross.
     x = x0 + (fw + gap) * 2
     cv.frame(x, y, fw, fh, INK, t=3)
@@ -215,7 +215,7 @@ def build_page():
     cv.frame(26, 26, W - 52, H - 52, INK, t=1)
 
     # Masthead.
-    y = 48
+    y = 64
     cv.rect(margin, y, inner_w, 3, INK)
     y += 16
     draw_centered(cv, y, "THE WORLD IN ONE PAGE", 6, INK)
@@ -226,18 +226,18 @@ def build_page():
     draw_centered(cv, y, "FRIDAY 20 NOVEMBER 2026", 3, INK)
     y += 7 * 3 + 10
     cv.rect(margin, y, inner_w, 4, RED)
-    y += 18
+    y += 30
 
     # Lead story.
     draw_centered(cv, y, "TRUMP XI PUTIN MEET", 5, INK)
-    y += 7 * 5 + 10
+    y += 7 * 5 + 16
     draw_centered(cv, y, "FIRST THREE-WAY TALKS IN CHINA", 4, INK)
-    y += 7 * 4 + 10
+    y += 7 * 4 + 16
     draw_centered(cv, y, "NUCLEAR RISKS TOP AGENDA", 4, RED)
-    y += 7 * 4 + 18
+    y += 7 * 4 + 30
 
     draw_flags(cv, y)
-    y += 104 + 22
+    y += 128 + 30
 
     # Thin divider.
     cv.rect(margin, y, inner_w, 2, INK)
@@ -246,14 +246,14 @@ def build_page():
     # Second story: text left, cyclone swirl right.
     story_y = y
     draw_text(cv, margin, story_y, "CYCLONE AKVAN NEARS ODISHA", 3, INK)
-    story_y += 7 * 3 + 8
+    story_y += 7 * 3 + 12
     draw_text(cv, margin, story_y, "LANDFALL TODAY - 80000 MOVED", 3, RED)
-    story_y += 7 * 3 + 10
+    story_y += 7 * 3 + 14
     draw_text(cv, margin, story_y, "COASTAL TOWNS EVACUATED AS", 2, GREY)
-    story_y += 7 * 2 + 6
+    story_y += 7 * 2 + 10
     draw_text(cv, margin, story_y, "WINDS RISE AND SEAS SWELL.", 2, GREY)
-    draw_spiral(cv, W - margin - 86, y + 52, 52, INK)
-    y = story_y + 7 * 2 + 16
+    draw_spiral(cv, W - margin - 92, y + 58, 62, INK)
+    y = story_y + 7 * 2 + 28
     cv.rect(margin, y, inner_w, 2, INK)
     y += 16
 
@@ -270,17 +270,17 @@ def build_page():
     ]
     col_w = inner_w // 2
     # Column divider.
-    cv.rect(margin + col_w - 1, y, 2, 7 * 2 * 3 + 24 * 2, LIGHT_GREY)
+    cv.rect(margin + col_w - 1, y, 2, 7 * 2 * 3 + 44 * 2, LIGHT_GREY)
     cy = y
     for item in left_items:
         cv.rect(margin, cy + 4, 10, 10, RED)
         draw_text(cv, margin + 20, cy, item, 2, INK)
-        cy += 7 * 2 + 24
+        cy += 7 * 2 + 44
     cy = y
     for item in right_items:
         cv.rect(margin + col_w + 14, cy + 4, 10, 10, RED)
         draw_text(cv, margin + col_w + 34, cy, item, 2, INK)
-        cy += 7 * 2 + 24
+        cy += 7 * 2 + 44
     y = cy + 6
 
     # Bottom rule and footer.
